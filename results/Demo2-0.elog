@@ -1,0 +1,935 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1029 rid Demo2-0-20141111-17:47:32-2818 b 1000
+KF p -1 c "" s ""
+MC id 1 c cModule t packetgenerator.Networknode1AP n Networknode1AP cm 1
+MS id 1 d ""
+MC id 2 c cModule t packetgenerator.node1 pid 1 n cliHost cm 1
+GC m 2 g 0 n radioIn o 0
+MS id 2 d r=,,#707070;i=block/wrxtx
+MC id 3 c cModule t packetgenerator.WirelessAPWithSink pid 1 n ap cm 1
+GC m 3 g 0 n radioIn o 0
+MS id 3 d r=,,#707070;p=200,200;i=device/accesspoint
+MC id 4 c ChannelControl t inet.world.radio.ChannelControl pid 1 n channelControl
+MS id 4 d p=61,46;i=misc/sun
+MC id 5 c generator t packetgenerator.generator pid 2 n packetgen
+GC m 5 g 0 n in o 0
+GC m 5 g 3 n out o 1
+MS id 5 d p=169,124;i=msg/job
+MC id 6 c cModule t inet.linklayer.ieee80211.Ieee80211Nic pid 2 n wlan cm 1
+GC m 6 g 0 n upperLayerIn o 0
+GC m 6 g 3 n upperLayerOut o 1
+GC m 6 g 4 n radioIn o 0
+MS id 6 d q=queue;p=89,225;i=block/ifcard;bgb=336,357
+MC id 7 c NotificationBoard t inet.base.NotificationBoard pid 2 n notificationBoard
+MS id 7 d p=78,60;i=block/control
+MC id 8 c StationaryMobility t inet.mobility.static.StationaryMobility pid 2 n mobility
+MS id 8 d p=71,121;i=block/cogwheel
+CC sm 2 sg 0 dm 6 dg 4
+CS sm 2 sg 0 d m=s
+CC sm 6 sg 3 dm 5 dg 0
+CC sm 5 sg 3 dm 6 dg 0
+MC id 9 c Ieee80211MgmtAPSimplified t inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAPSimplified pid 6 n mgmt
+GC m 9 g 0 n upperLayerIn o 0
+GC m 9 g 3 n upperLayerOut o 1
+GC m 9 g 4 n macIn o 0
+GC m 9 g 7 n macOut o 1
+GC m 9 g 8 n agentIn o 0
+GC m 9 g 11 n agentOut o 1
+MS id 9 d q=wlanDataQueue;p=157,131;i=block/cogwheel
+MC id 10 c Ieee80211Mac t inet.linklayer.ieee80211.mac.Ieee80211Mac pid 6 n mac
+GC m 10 g 0 n upperLayerIn o 0
+GC m 10 g 3 n upperLayerOut o 1
+GC m 10 g 4 n lowerLayerIn o 0
+GC m 10 g 7 n lowerLayerOut o 1
+MS id 10 d p=157,217;i=block/layer
+MC id 11 c Radio t inet.linklayer.ieee80211.radio.Ieee80211Radio pid 6 n radio
+GC m 11 g 0 n upperLayerIn o 0
+GC m 11 g 3 n upperLayerOut o 1
+GC m 11 g 4 n radioIn o 0
+MS id 11 d p=157,302;i=block/wrxtx
+CC sm 6 sg 4 dm 11 dg 4
+CS sm 6 sg 4 d m=s
+CC sm 10 sg 7 dm 11 dg 0
+CC sm 11 sg 3 dm 10 dg 4
+CC sm 10 sg 3 dm 9 dg 4
+CC sm 9 sg 7 dm 10 dg 0
+CC sm 9 sg 3 dm 6 dg 3
+CS sm 9 sg 3 d m=n
+CC sm 6 sg 0 dm 9 dg 0
+CS sm 6 sg 0 d m=n
+MC id 12 c Sink t inet.base.Sink pid 3 n sink
+MS id 12 d p=169,124;i=block/sink
+MC id 13 c cModule t inet.linklayer.ieee80211.Ieee80211Nic pid 3 n wlan cm 1
+GC m 13 g 0 n upperLayerIn o 0
+GC m 13 g 3 n upperLayerOut o 1
+GC m 13 g 4 n radioIn o 0
+MS id 13 d q=queue;p=89,225;i=block/ifcard;bgb=336,357
+MC id 14 c NotificationBoard t inet.base.NotificationBoard pid 3 n notificationBoard
+MS id 14 d p=78,60;i=block/control
+MC id 15 c StationaryMobility t inet.mobility.static.StationaryMobility pid 3 n mobility
+MS id 15 d p=71,121;i=block/cogwheel
+CC sm 3 sg 0 dm 13 dg 4
+CS sm 3 sg 0 d m=s
+GC m 12 g 1048576 n in i 0 o 0
+CC sm 13 sg 3 dm 12 dg 1048576
+MC id 16 c Ieee80211MgmtAPSimplified t inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAPSimplified pid 13 n mgmt
+GC m 16 g 0 n upperLayerIn o 0
+GC m 16 g 3 n upperLayerOut o 1
+GC m 16 g 4 n macIn o 0
+GC m 16 g 7 n macOut o 1
+GC m 16 g 8 n agentIn o 0
+GC m 16 g 11 n agentOut o 1
+MS id 16 d q=wlanDataQueue;p=157,131;i=block/cogwheel
+MC id 17 c Ieee80211Mac t inet.linklayer.ieee80211.mac.Ieee80211Mac pid 13 n mac
+GC m 17 g 0 n upperLayerIn o 0
+GC m 17 g 3 n upperLayerOut o 1
+GC m 17 g 4 n lowerLayerIn o 0
+GC m 17 g 7 n lowerLayerOut o 1
+MS id 17 d p=157,217;i=block/layer
+MC id 18 c Radio t inet.linklayer.ieee80211.radio.Ieee80211Radio pid 13 n radio
+GC m 18 g 0 n upperLayerIn o 0
+GC m 18 g 3 n upperLayerOut o 1
+GC m 18 g 4 n radioIn o 0
+MS id 18 d p=157,302;i=block/wrxtx
+CC sm 13 sg 4 dm 18 dg 4
+CS sm 13 sg 4 d m=s
+CC sm 17 sg 7 dm 18 dg 0
+CC sm 18 sg 3 dm 17 dg 4
+CC sm 17 sg 3 dm 16 dg 4
+CC sm 16 sg 7 dm 17 dg 0
+CC sm 16 sg 3 dm 13 dg 3
+CS sm 16 sg 3 d m=n
+CC sm 13 sg 0 dm 16 dg 0
+CS sm 13 sg 0 d m=n
+MB sm 1 tm 2 m initialize(0)
+ME
+MB sm 1 tm 5 m initialize(0)
+CM id 0 tid 0 eid 0 etid 0 c cMessage n selfMsg pe -1
+BS id 0 tid 0 eid 0 etid 0 c cMessage n selfMsg pe 0
+ES t 1
+ME
+MB sm 1 tm 6 m initialize(0)
+ME
+MB sm 1 tm 9 m initialize(0)
+ME
+MB sm 1 tm 10 m initialize(0)
+- Initializing stage 0
+- Operating mode: 802.11g retryLimit=7 cwMinMulticast=31 slotTime = 9us DIFS = 28usMAC Transmission algorithm : Constant Rate
+-  basicBitrate=1Mb  bitrate=54Mb IDLE=0 RECEIVE=8
+MB sm 10 tm 7 m subscribe(RADIO-STATE)
+ME
+CM id 1 tid 1 eid 1 etid 1 c cMessage n SIFS pe -1
+CM id 2 tid 2 eid 2 etid 2 c cMessage n DIFS pe -1
+CM id 3 tid 3 eid 3 etid 3 c cMessage n AIFS pe -1
+CM id 4 tid 4 eid 4 etid 4 c cMessage n Backoff pe -1
+CM id 5 tid 5 eid 5 etid 5 c cMessage n TXOP pe -1
+CM id 6 tid 6 eid 6 etid 6 c cMessage n Timeout pe -1
+CM id 7 tid 7 eid 7 etid 7 c cMessage n Reserve pe -1
+CM id 8 tid 8 eid 8 etid 8 c cMessage n MediumStateChange pe -1
+- Requesting first two frames from queue module
+MB sm 10 tm 9 m requestPacket()
+ME
+MB sm 10 tm 9 m requestPacket()
+ME
+ME
+MB sm 1 tm 11 m initialize(0)
+- Initializing Radio, stage=0
+- Initialized channel with noise: 1e-11 sensitivity: 3.16228e-09
+ME
+MB sm 1 tm 7 m initialize(0)
+ME
+MB sm 1 tm 8 m initialize(0)
+- TRACE: initializing MobilityBase stage 0
+ME
+MB sm 1 tm 3 m initialize(0)
+ME
+MB sm 1 tm 12 m initialize(0)
+ME
+MB sm 1 tm 13 m initialize(0)
+ME
+MB sm 1 tm 16 m initialize(0)
+ME
+MB sm 1 tm 17 m initialize(0)
+- Initializing stage 0
+- Operating mode: 802.11g retryLimit=7 cwMinMulticast=31 slotTime = 9us DIFS = 28usMAC Transmission algorithm : Constant Rate
+-  basicBitrate=1Mb  bitrate=54Mb IDLE=0 RECEIVE=8
+MB sm 17 tm 14 m subscribe(RADIO-STATE)
+ME
+CM id 9 tid 9 eid 9 etid 9 c cMessage n SIFS pe -1
+CM id 10 tid 10 eid 10 etid 10 c cMessage n DIFS pe -1
+CM id 11 tid 11 eid 11 etid 11 c cMessage n AIFS pe -1
+CM id 12 tid 12 eid 12 etid 12 c cMessage n Backoff pe -1
+CM id 13 tid 13 eid 13 etid 13 c cMessage n TXOP pe -1
+CM id 14 tid 14 eid 14 etid 14 c cMessage n Timeout pe -1
+CM id 15 tid 15 eid 15 etid 15 c cMessage n Reserve pe -1
+CM id 16 tid 16 eid 16 etid 16 c cMessage n MediumStateChange pe -1
+- Requesting first two frames from queue module
+MB sm 17 tm 16 m requestPacket()
+ME
+MB sm 17 tm 16 m requestPacket()
+ME
+ME
+MB sm 1 tm 18 m initialize(0)
+- Initializing Radio, stage=0
+- Initialized channel with noise: 1e-11 sensitivity: 3.16228e-09
+ME
+MB sm 1 tm 14 m initialize(0)
+ME
+MB sm 1 tm 15 m initialize(0)
+- TRACE: initializing MobilityBase stage 0
+ME
+MB sm 1 tm 4 m initialize(0)
+ME
+MB sm 1 tm 9 m initialize(1)
+ME
+MB sm 1 tm 10 m initialize(1)
+MB sm 10 tm 7 m subscribe(IF-DELETED)
+ME
+ME
+MB sm 1 tm 11 m initialize(1)
+- Initializing Radio, stage=1
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=0 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-CHANNEL, IDLE, channel #0, 54Mbps )"
+ME
+ME
+MB sm 1 tm 8 m initialize(1)
+- TRACE: initializing MobilityBase stage 1
+- current position = (220, 40, 0)
+MS id 2 d p=220;r=,,#707070;i=block/wrxtx
+MS id 2 d p=220,40;r=,,#707070;i=block/wrxtx
+ME
+MB sm 1 tm 16 m initialize(1)
+ME
+MB sm 1 tm 17 m initialize(1)
+MB sm 17 tm 14 m subscribe(IF-DELETED)
+ME
+ME
+MB sm 1 tm 18 m initialize(1)
+- Initializing Radio, stage=1
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 14 tm 17 m ""
+- ** Notification at T=0 to Networknode1AP.ap.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-CHANNEL, IDLE, channel #0, 54Mbps )"
+ME
+ME
+MB sm 1 tm 15 m initialize(1)
+- TRACE: initializing MobilityBase stage 1
+- current position = (20, 40, 0)
+MS id 3 d r=,,#707070;p=20,200;i=device/accesspoint
+MS id 3 d r=,,#707070;p=20,40;i=device/accesspoint
+ME
+MB sm 1 tm 11 m initialize(2)
+MB sm 11 tm 4 m ""
+ME
+MB sm 11 tm 4 m ""
+ME
+- Initializing Radio, stage=2
+MB sm 11 tm 4 m ""
+ME
+MS id 2 d p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r1;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r1=14057;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r2;r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r2=790;r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx
+MS id 2 d r2=790,,blue;r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx
+ME
+MB sm 1 tm 8 m initialize(2)
+- TRACE: initializing MobilityBase stage 2
+ME
+MB sm 1 tm 18 m initialize(2)
+MB sm 18 tm 4 m ""
+ME
+MB sm 18 tm 4 m ""
+ME
+- Initializing Radio, stage=2
+MB sm 18 tm 4 m ""
+ME
+MS id 3 d r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r1;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r1=14057;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r1=14057,,gray;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r1=14057,,gray;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r2;r1=14057,,gray;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r2=790;r1=14057,,gray;r=,,#707070;p=20,40;i=device/accesspoint
+MS id 3 d r2=790,,blue;r1=14057,,gray;r=,,#707070;p=20,40;i=device/accesspoint
+ME
+MB sm 1 tm 15 m initialize(2)
+- TRACE: initializing MobilityBase stage 2
+ME
+
+E # 1 t 1 m 5 ce 0 msg 0
+CM id 17 tid 17 eid 17 etid 17 c cMessage n "" pe -1
+CM id 18 tid 18 eid 18 etid 18 c cMessage n "" pe -1
+BS id 0 tid 0 eid 0 etid 0 c cMessage n selfMsg pe 1
+ES t 2
+BS id 17 tid 17 eid 18 etid 18 c EthernetIIFrame n "" pe 1
+CL id 17 tid 17 eid 18 etid 18 c EthernetIIFrame n "" pe 1 cid 19
+SH sm 5 sg 3
+SH sm 6 sg 0
+ES t 1
+MS id 2 d "t=rcvd: 0 sent: 1;r2=790,,blue;r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx"
+- generated the msg0"updatedisplay" called
+BU id 2 txt "update display called"
+
+E # 2 t 1 m 9 ce 1 msg 17
+- Packet arrived from upper layers: (EthernetIIFrame)
+CM id 20 tid 20 eid 20 etid 20 c cMessage n "" pe -1
+CL id 18 tid 18 eid 18 etid 18 c cPacket n "" pe 1 cid 21
+DM id 17 tid 17 eid 17 etid 17 c cMessage n "" pe 2
+BS id 20 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 2
+CL id 20 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 2 cid 22
+SH sm 9 sg 7
+ES t 1
+MS id 9 d "t=q rcvd: 1\nq dropped: 0;q=wlanDataQueue;p=157,131;i=block/cogwheel"
+
+E # 3 t 1 m 10 ce 2 msg 20
+- frame (Ieee80211DataFrameWithSNAP) received from higher layer, receiver = 10-00-00-00-00-00
+- frame classified as access category 0 (0 background, 1 best effort, 2 video, 3 voice)
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  INIT
+- firing Data-Ready transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state DEFER
+- FSM Ieee80211Mac State Machine: leaving state  DEFER
+- firing Immediate-Wait-AIFS transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state WAITAIFS
+- scheduling AIFS period (0)
+BS id 3 tid 3 eid 3 etid 3 c cMessage n AIFS pe 0
+ES t 1.000028
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(scheduled), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+
+E # 4 t 1.000028 m 10 ce 3 msg 3
+- received self message: (cMessage)AIFS(kind: 0)
+- Changing currentAC to 0
+-  kind is 0,name is AIFS
+- # state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  WAITAIFS
+- firing Immediate-Transmit-Data transition for Ieee80211Mac State Machine
+- sending Data frame
+CL id 20 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 3 cid 23
+-  duration=304us(112bits 1Mbps)
+- sending down (Ieee80211DataFrameWithSNAP)
+BS id 23 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 4
+CL id 23 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 4 cid 24
+SH sm 10 sg 7
+ES t 1.000028
+- canceling AIFS period
+- FSM Ieee80211Mac State Machine: entering state WAITACK
+- scheduling data timeout period
+- (Ieee80211DataFrameWithSNAP) duration=34us(336bits 54Mbps)
+-  duration=304us(112bits 1Mbps)
+-  time out=361us
+BS id 6 tid 6 eid 6 etid 6 c cMessage n Timeout pe 0
+ES t 1.000389
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+
+E # 5 t 1.000028 m 11 ce 4 msg 23
+CM id 25 tid 25 eid 25 etid 25 c cMessage n "" pe -1
+- Radio:frameDuration=34us(336bits)
+- Frame (Ieee80211DataFrameWithSNAP) will be transmitted at 54Mbps
+- sending, changing RadioState to TRANSMIT
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, TRANSMIT, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=1.000028 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE TRANSMIT, channel #0, 54Mbps 
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+ME
+ME
+CM id 26 tid 26 eid 26 etid 26 c cMessage n "" k 1 pe -1
+BS id 26 tid 26 eid 26 etid 26 c cMessage n "" k 1 pe 5
+ES t 1.000062
+MB sm 11 tm 4 m ""
+ME
+CL id 25 tid 25 eid 21 etid 18 c AirFrame n "" l 336 pe 5 cid 27
+BS id 27 tid 25 eid 21 etid 18 c AirFrame n "" l 336 pe 5
+CL id 27 tid 25 eid 21 etid 18 c AirFrame n "" l 336 pe 5 cid 28
+SD sm 11 dm 3 dg 0 pd 0.000000667128 td 0.000034
+SH sm 3 sg 0
+SH sm 13 sg 4
+ES t 1.000028667128 is 1
+MB sm 11 tm 4 m ""
+DM id 25 tid 25 eid 25 etid 25 c cMessage n "" pe 5
+ME
+
+E # 6 t 1.000028667128 m 18 ce 5 msg 27
+- bitrate = 5.4e+07
+-  sensitivity after updateSensitivity: 3.16228e-09
+- receiving frame 
+- publish new RadioState:RECV
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-STATE, RECV, channel #0, 54Mbps )"
+MB sm 14 tm 17 m ""
+- ** Notification at T=1.000028667128 to Networknode1AP.ap.wlan.mac: RADIO-STATE RECV, channel #0, 54Mbps 
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 1, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 1, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+CM id 29 tid 29 eid 29 etid 29 c cMessage n endRx k 2 pe -1
+BS id 29 tid 29 eid 29 etid 29 c cMessage n endRx k 2 pe 6
+ES t 1.000062667128
+
+E # 7 t 1.000062 m 11 ce 5 msg 26
+- Radio::handleSelfMsg1
+- transmission over, switch to idle mode (state:IDLE)
+DM id 26 tid 26 eid 26 etid 26 c cMessage n "" k 1 pe 7
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=1.000062 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+ME
+ME
+- Radio::handleSelfMsg END
+
+E # 8 t 1.000062667128 m 18 ce 6 msg 29
+- Radio::handleSelfMsg2
+- frame is completely received now
+DM id 29 tid 29 eid 29 etid 29 c cMessage n endRx k 2 pe 8
+- reception of frame over, preparing to send packet to upper layer
+CL id 23 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 5 cid 30
+- packet (Ieee80211DataFrameWithSNAP) () snrMin=4940.48
+- bpsk snr=4940.48 ber=0
+- 64-Qam snr=4940.48 ber=1.23866e-53
+- berHeader: -1.90801e-47 berMPDU: 6.7059e-269 lengthMPDU: 336 PER: 0
+- packet was received correctly, it is now handed to upper layer...
+DM id 27 tid 25 eid 27 etid 25 c cMessage n "" pe 6
+- sending up frame 
+BS id 30 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 8
+CL id 30 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 8 cid 31
+SH sm 18 sg 3
+ES t 1.000062667128
+- new RadioState is IDLE
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 14 tm 17 m ""
+- ** Notification at T=1.000062667128 to Networknode1AP.ap.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+- Radio::handleSelfMsg END
+
+E # 9 t 1.000062667128 m 17 ce 8 msg 30
+- ->Enter handleLowerMsg...
+- received message from lower layer: (Ieee80211DataFrameWithSNAP)
+MB sm 17 tm 14 m "fireChangeNotification(21, )"
+ME
+- Self address: 10-00-00-00-00-00, receiver address: 10-00-00-00-00-00, received frame is for us: 1, received frame was sent by us: 0
+- # state information: mode = DCF, state = INIT, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  INIT
+- firing Receive transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state RECEIVE
+- FSM Ieee80211Mac State Machine: leaving state  RECEIVE
+- firing Immediate-Receive-Data transition for Ieee80211Mac State Machine
+- sending up (Ieee80211DataFrameWithSNAP)
+BS id 30 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 9
+CL id 30 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 9 cid 32
+SH sm 17 sg 3
+ES t 1.000062667128
+- FSM Ieee80211Mac State Machine: entering state WAITSIFS
+- scheduling SIFS period
+CL id 30 tid 20 eid 21 etid 18 c Ieee80211DataFrameWithSNAP n "" l 336 pe 9 cid 33
+BS id 9 tid 9 eid 9 etid 9 c cMessage n SIFS pe 0
+ES t 1.000072667128
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITSIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- Leave handleLowerMsg...
+
+E # 10 t 1.000062667128 m 16 ce 9 msg 30
+- Frame arrived from MAC: (Ieee80211DataFrameWithSNAP)
+DM id 30 tid 20 eid 30 etid 20 c cMessage n "" pe 10
+
+E # 11 t 1.000072667128 m 17 ce 9 msg 9
+- received self message: (cMessage)SIFS(kind: 0)
+- # state information: mode = DCF, state = WAITSIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  WAITSIFS
+- firing Transmit-ACK transition for Ieee80211Mac State Machine
+- sending ACK frame
+CM id 34 tid 34 eid 34 etid 34 c cMessage n wlan-ack pe -1
+- sending down (Ieee80211ACKFrame)wlan-ack
+BS id 34 tid 34 eid 34 etid 34 c Ieee80211ACKFrame n wlan-ack l 112 pe 11
+CL id 34 tid 34 eid 34 etid 34 c Ieee80211ACKFrame n wlan-ack l 112 pe 11 cid 35
+SH sm 17 sg 7
+ES t 1.000072667128
+DM id 33 tid 20 eid 33 etid 20 c cMessage n "" pe 9
+- FSM Ieee80211Mac State Machine: entering state IDLE
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+
+E # 12 t 1.000072667128 m 18 ce 11 msg 34
+CM id 36 tid 36 eid 36 etid 36 c cMessage n "" pe -1
+- Radio:frameDuration=304us(112bits)
+- Frame (Ieee80211ACKFrame)wlan-ack will be transmitted at 1Mbps
+- sending, changing RadioState to TRANSMIT
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-STATE, TRANSMIT, channel #0, 54Mbps )"
+MB sm 14 tm 17 m ""
+- ** Notification at T=1.000072667128 to Networknode1AP.ap.wlan.mac: RADIO-STATE TRANSMIT, channel #0, 54Mbps 
+- # state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+CM id 37 tid 37 eid 37 etid 37 c cMessage n "" k 1 pe -1
+BS id 37 tid 37 eid 37 etid 37 c cMessage n "" k 1 pe 12
+ES t 1.000376667128
+MB sm 18 tm 4 m ""
+ME
+CL id 36 tid 36 eid 34 etid 34 c AirFrame n wlan-ack l 112 pe 12 cid 38
+BS id 38 tid 36 eid 34 etid 34 c AirFrame n wlan-ack l 112 pe 12
+CL id 38 tid 36 eid 34 etid 34 c AirFrame n wlan-ack l 112 pe 12 cid 39
+SD sm 18 dm 2 dg 0 pd 0.000000667128 td 0.000304
+SH sm 2 sg 0
+SH sm 6 sg 4
+ES t 1.000073334256 is 1
+MB sm 18 tm 4 m ""
+DM id 36 tid 36 eid 36 etid 36 c cMessage n wlan-ack pe 12
+ME
+
+E # 13 t 1.000073334256 m 11 ce 12 msg 38
+- bitrate = 1e+06
+-  sensitivity after updateSensitivity: 3.16228e-09
+- receiving frame wlan-ack
+- publish new RadioState:RECV
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, RECV, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=1.000073334256 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE RECV, channel #0, 54Mbps 
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 1, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 1, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+ME
+ME
+CM id 40 tid 40 eid 40 etid 40 c cMessage n endRx k 2 pe -1
+BS id 40 tid 40 eid 40 etid 40 c cMessage n endRx k 2 pe 13
+ES t 1.000377334256
+
+E # 14 t 1.000376667128 m 18 ce 12 msg 37
+- Radio::handleSelfMsg1
+- transmission over, switch to idle mode (state:IDLE)
+DM id 37 tid 37 eid 37 etid 37 c cMessage n "" k 1 pe 14
+MB sm 18 tm 14 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 14 tm 17 m ""
+- ** Notification at T=1.000376667128 to Networknode1AP.ap.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+ME
+ME
+- Radio::handleSelfMsg END
+
+E # 15 t 1.000377334256 m 11 ce 13 msg 40
+- Radio::handleSelfMsg2
+- frame is completely received now
+DM id 40 tid 40 eid 40 etid 40 c cMessage n endRx k 2 pe 15
+- reception of frame over, preparing to send packet to upper layer
+CL id 34 tid 34 eid 34 etid 34 c Ieee80211ACKFrame n wlan-ack l 112 pe 12 cid 41
+- packet (Ieee80211ACKFrame)wlan-ack () snrMin=4940.48
+- berHeader: -1.90801e-47 berMPDU: 6.7059e-269 lengthMPDU: 112 PER: 0
+- packet was received correctly, it is now handed to upper layer...
+DM id 38 tid 36 eid 38 etid 36 c cMessage n wlan-ack pe 13
+- sending up frame wlan-ack
+BS id 41 tid 34 eid 41 etid 34 c Ieee80211ACKFrame n wlan-ack l 112 pe 15
+CL id 41 tid 34 eid 41 etid 34 c Ieee80211ACKFrame n wlan-ack l 112 pe 15 cid 42
+SH sm 11 sg 3
+ES t 1.000377334256
+- new RadioState is IDLE
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, IDLE, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=1.000377334256 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE IDLE, channel #0, 54Mbps 
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+ME
+ME
+- Radio::handleSelfMsg END
+
+E # 16 t 1.000377334256 m 10 ce 15 msg 41
+- ->Enter handleLowerMsg...
+- received message from lower layer: (Ieee80211ACKFrame)wlan-ack
+MB sm 10 tm 7 m "fireChangeNotification(21, )"
+ME
+- Cast failed
+- Self address: 30-00-00-00-00-00, receiver address: 30-00-00-00-00-00, received frame is for us: 1, received frame was sent by us: 0
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 20
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  WAITACK
+- firing Receive-ACK transition for Ieee80211Mac State Machine
+- record macDelay AC0 value 0.000377334256
+- canceling timeout period
+CE id 6 tid 6 eid 6 etid 6 c cMessage n Timeout pe 4
+- dropping frame from transmission queue
+- requesting another frame from queue module
+MB sm 10 tm 9 m requestPacket()
+ME
+DM id 20 tid 20 eid 20 etid 20 c cMessage n "" pe 4
+- FSM Ieee80211Mac State Machine: entering state DEFER
+- FSM Ieee80211Mac State Machine: leaving state  DEFER
+- firing Immediate-Wait-AIFS transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state WAITAIFS
+- scheduling DIFS period
+BS id 2 tid 2 eid 2 etid 2 c cMessage n DIFS pe 0
+ES t 1.000405334256
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 1
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+DM id 41 tid 34 eid 41 etid 34 c cMessage n wlan-ack pe 16
+- Leave handleLowerMsg...
+
+E # 17 t 1.000405334256 m 10 ce 16 msg 2
+- received self message: (cMessage)DIFS(kind: 0)
+- # state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 1
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  WAITAIFS
+- firing DIFS-Over transition for Ieee80211Mac State Machine
+- generating backoff slot number for retry: 0
+- generated backoff slot number: 12 , cw: 31 ,cwMin:cwMax = 31:1023
+- backoff period set to 0.000108
+- FSM Ieee80211Mac State Machine: entering state BACKOFF
+- scheduling backoff period
+BS id 4 tid 4 eid 4 etid 4 c cMessage n Backoff pe 0
+ES t 1.000513334256
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = BACKOFF, backoff 0..1 = 1
+- # backoffPeriod 0..1 = 0.000108
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0(scheduled)
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+
+E # 18 t 1.000513334256 m 10 ce 17 msg 4
+- received self message: (cMessage)Backoff(kind: 0)
+- Changing currentAC to 0
+-  kind is 0,name is Backoff
+- # state information: mode = DCF, state = BACKOFF, backoff 0..1 = 1
+- # backoffPeriod 0..1 = 0.000108
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  BACKOFF
+- firing Backoff-Idle transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state IDLE
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 0, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: none
+
+E # 19 t 2 m 5 ce 1 msg 0
+CM id 43 tid 43 eid 43 etid 43 c cMessage n "" pe -1
+CM id 44 tid 44 eid 44 etid 44 c cMessage n "" pe -1
+BS id 0 tid 0 eid 0 etid 0 c cMessage n selfMsg pe 19
+ES t 3
+BS id 43 tid 43 eid 44 etid 44 c EthernetIIFrame n "" pe 19
+CL id 43 tid 43 eid 44 etid 44 c EthernetIIFrame n "" pe 19 cid 45
+SH sm 5 sg 3
+SH sm 6 sg 0
+ES t 2
+MS id 2 d "t=rcvd: 0 sent: 2;r2=790,,blue;r1=14057,,gray;p=220,40;r=,,#707070;i=block/wrxtx"
+- generated the msg2"updatedisplay" called
+BU id 2 txt "update display called"
+
+E # 20 t 2 m 9 ce 19 msg 43
+- Packet arrived from upper layers: (EthernetIIFrame)
+CM id 46 tid 46 eid 46 etid 46 c cMessage n "" pe -1
+CL id 44 tid 44 eid 44 etid 44 c cPacket n "" pe 19 cid 47
+DM id 43 tid 43 eid 43 etid 43 c cMessage n "" pe 20
+BS id 46 tid 46 eid 47 etid 44 c Ieee80211DataFrameWithSNAP n "" l 336 pe 20
+CL id 46 tid 46 eid 47 etid 44 c Ieee80211DataFrameWithSNAP n "" l 336 pe 20 cid 48
+SH sm 9 sg 7
+ES t 2
+MS id 9 d "t=q rcvd: 2\nq dropped: 0;q=wlanDataQueue;p=157,131;i=block/cogwheel"
+
+E # 21 t 2 m 10 ce 20 msg 46
+- frame (Ieee80211DataFrameWithSNAP) received from higher layer, receiver = 10-00-00-00-00-00
+- frame classified as access category 0 (0 background, 1 best effort, 2 video, 3 voice)
+- # state information: mode = DCF, state = IDLE, backoff 0..1 = 0
+- # backoffPeriod 0..1 = 0
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  IDLE
+- firing Data-Ready transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state DEFER
+- FSM Ieee80211Mac State Machine: leaving state  DEFER
+- firing Immediate-Wait-AIFS transition for Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: entering state WAITAIFS
+- scheduling AIFS period (0)
+BS id 3 tid 3 eid 3 etid 3 c cMessage n AIFS pe 4
+ES t 2.000028
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(scheduled), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+
+E # 22 t 2.000028 m 10 ce 21 msg 3
+- received self message: (cMessage)AIFS(kind: 0)
+- Changing currentAC to 0
+-  kind is 0,name is AIFS
+- # state information: mode = DCF, state = WAITAIFS, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+- processing event in state machine Ieee80211Mac State Machine
+- FSM Ieee80211Mac State Machine: leaving state  WAITAIFS
+- firing Immediate-Transmit-Data transition for Ieee80211Mac State Machine
+- sending Data frame
+CL id 46 tid 46 eid 47 etid 44 c Ieee80211DataFrameWithSNAP n "" l 336 pe 21 cid 49
+-  duration=304us(112bits 1Mbps)
+- sending down (Ieee80211DataFrameWithSNAP)
+BS id 49 tid 46 eid 47 etid 44 c Ieee80211DataFrameWithSNAP n "" l 336 pe 22
+CL id 49 tid 46 eid 47 etid 44 c Ieee80211DataFrameWithSNAP n "" l 336 pe 22 cid 50
+SH sm 10 sg 7
+ES t 2.000028
+- canceling AIFS period
+- FSM Ieee80211Mac State Machine: entering state WAITACK
+- scheduling data timeout period
+- (Ieee80211DataFrameWithSNAP) duration=34us(336bits 54Mbps)
+-  duration=304us(112bits 1Mbps)
+-  time out=361us
+BS id 6 tid 6 eid 6 etid 6 c cMessage n Timeout pe 16
+ES t 2.000389
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 0, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is free, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+
+E # 23 t 2.000028 m 11 ce 22 msg 49
+CM id 51 tid 51 eid 51 etid 51 c cMessage n "" pe -1
+- Radio:frameDuration=34us(336bits)
+- Frame (Ieee80211DataFrameWithSNAP) will be transmitted at 54Mbps
+- sending, changing RadioState to TRANSMIT
+MB sm 11 tm 7 m "fireChangeNotification(RADIO-STATE, TRANSMIT, channel #0, 54Mbps )"
+MB sm 7 tm 10 m ""
+- ** Notification at T=2.000028 to Networknode1AP.cliHost.wlan.mac: RADIO-STATE TRANSMIT, channel #0, 54Mbps 
+- # state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+- processing event in state machine Ieee80211Mac State Machine
+- leaving handleWithFSM
+- 	# state information: mode = DCF, state = WAITACK, backoff 0..1 = 0
+- # backoffPeriod 0..1 = -1
+- # retryCounter 0..1 = 0, radioState = 2, nav = 0, txop is 0
+- #queue size 0..1 = 1, medium is busy, scheduled AIFS are 0(), scheduled backoff are 0()
+- # currentAC: 0, oldcurrentAC: 0
+- # current transmission: 46
+ME
+ME
+CM id 52 tid 52 eid 52 etid 52 c cMessage n "" k 1 pe -1
+BS id 52 tid 52 eid 52 etid 52 c cMessage n "" k 1 pe 23
+ES t 2.000062
+MB sm 11 tm 4 m ""
+ME
+CL id 51 tid 51 eid 47 etid 44 c AirFrame n "" l 336 pe 23 cid 53
+BS id 53 tid 51 eid 47 etid 44 c AirFrame n "" l 336 pe 23
+CL id 53 tid 51 eid 47 etid 44 c AirFrame n "" l 336 pe 23 cid 54
+SD sm 11 dm 3 dg 0 pd 0.000000667128 td 0.000034
+SH sm 3 sg 0
+SH sm 13 sg 4
+ES t 2.000028667128 is 1
+MB sm 11 tm 4 m ""
+DM id 51 tid 51 eid 51 etid 51 c cMessage n "" pe 23
+ME
+SE e 0 c 9 m "The user has finished the simulation at event #24, t=2.000028."
+- Sent:     2
+- Received: 0

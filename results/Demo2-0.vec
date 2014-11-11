@@ -1,0 +1,179 @@
+version 2
+run Demo2-0-20141111-17:47:32-2818
+attr configname Demo2
+attr datetime 20141111-17:47:32
+attr experiment Demo2
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Networknode1AP
+attr processid 2818
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  Networknode1AP.cliHost.wlan.mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 11  Networknode1AP.ap.wlan.mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 22  Networknode1AP.cliHost.wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, OFF=4, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 21  Networknode1AP.cliHost.wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 28  Networknode1AP.ap.wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, OFF=4, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 27  Networknode1AP.ap.wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 6  Networknode1AP.cliHost.wlan.radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 8  Networknode1AP.cliHost.wlan.radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 7  Networknode1AP.cliHost.wlan.radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 17  Networknode1AP.ap.wlan.radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 19  Networknode1AP.ap.wlan.radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 18  Networknode1AP.ap.wlan.radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 4  Networknode1AP.cliHost.wlan.mac  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 24  Networknode1AP.cliHost.wlan.mac  "throughput AC0"  ETV
+vector 3  Networknode1AP.cliHost.wlan.mac  sentDownPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, vector(packetBytes)"
+vector 30  Networknode1AP.ap.wlan.mac  "throughput AC0"  ETV
+vector 32  Networknode1AP.ap.wlan.radio  snirVector  ETV
+vector 16  Networknode1AP.ap.wlan.mac  rcvdPkFromLL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, vector(packetBytes)"
+vector 13  Networknode1AP.ap.wlan.mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 14  Networknode1AP.ap.wlan.mac  sentDownPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets sent to lower layer, vector(packetBytes)"
+vector 26  Networknode1AP.cliHost.wlan.radio  snirVector  ETV
+vector 5  Networknode1AP.cliHost.wlan.mac  rcvdPkFromLL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromLower
+attr title  "packets received from lower layer, vector(packetBytes)"
+vector 25  Networknode1AP.cliHost.wlan.mac  "Mac delay AC0"  ETV
+vector 23  Networknode1AP.cliHost.wlan.mac  "jitter AC0"  ETV
+0	0	0	0
+3	4	1.000028	42
+3	22	2.000028	42
+4	3	1	42
+4	21	2	42
+5	16	1.000377334256	14
+6	0	0	54000000
+7	0	0	0
+8	0	0	0
+8	5	1.000028	2
+8	7	1.000062	0
+8	13	1.000073334256	1
+8	15	1.000377334256	0
+8	23	2.000028	2
+11	0	0	0
+13	9	1.000062667128	42
+14	11	1.000072667128	14
+16	9	1.000062667128	42
+17	0	0	54000000
+18	0	0	0
+19	0	0	0
+19	6	1.000028667128	1
+19	8	1.000062667128	0
+19	12	1.000072667128	2
+19	14	1.000376667128	0
+21	0	0	0
+21	0	0	0
+21	3	1	0
+21	3	1	2
+21	4	1.000028	2
+21	4	1.000028	4
+21	5	1.000028	4
+21	5	1.000028	4
+21	7	1.000062	4
+21	7	1.000062	4
+21	13	1.000073334256	4
+21	13	1.000073334256	4
+21	15	1.000377334256	4
+21	15	1.000377334256	4
+21	16	1.000377334256	4
+21	16	1.000377334256	2
+21	17	1.000405334256	2
+21	17	1.000405334256	3
+21	18	1.000513334256	3
+21	18	1.000513334256	0
+21	21	2	0
+21	21	2	2
+21	22	2.000028	2
+21	22	2.000028	4
+21	23	2.000028	4
+21	23	2.000028	4
+22	0	0	0
+22	0	0	0
+22	5	1.000028	0
+22	5	1.000028	2
+22	7	1.000062	2
+22	7	1.000062	0
+22	13	1.000073334256	0
+22	13	1.000073334256	1
+22	15	1.000377334256	1
+22	15	1.000377334256	0
+22	23	2.000028	0
+22	23	2.000028	2
+23	21	2	0
+24	3	1	0
+24	21	2	336
+25	16	1.000377334256	0.000377334256
+26	15	1.000377334256	36.937691987245
+27	0	0	0
+27	0	0	0
+27	6	1.000028667128	0
+27	6	1.000028667128	0
+27	8	1.000062667128	0
+27	8	1.000062667128	0
+27	9	1.000062667128	0
+27	9	1.000062667128	7
+27	11	1.000072667128	7
+27	11	1.000072667128	0
+27	12	1.000072667128	0
+27	12	1.000072667128	0
+27	14	1.000376667128	0
+27	14	1.000376667128	0
+28	0	0	0
+28	0	0	0
+28	6	1.000028667128	0
+28	6	1.000028667128	1
+28	8	1.000062667128	1
+28	8	1.000062667128	0
+28	12	1.000072667128	0
+28	12	1.000072667128	2
+28	14	1.000376667128	2
+28	14	1.000376667128	0
+30	6	1.000028667128	0
+32	8	1.000062667128	36.937691987245

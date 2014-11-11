@@ -1,0 +1,35 @@
+version 2
+run General-0-20141025-04:39:46-11777
+attr configname General
+attr datetime 20141025-04:39:46
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Networknode1AP
+attr processid 11777
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  Networknode1AP.cliHost.wlan.mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 11  Networknode1AP.ap.wlan.mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 22  Networknode1AP.cliHost.wlan.mac  RadioState  ETV
+attr enum  "IDLE=0, OFF=4, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 21  Networknode1AP.cliHost.wlan.mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+0	0	0	0
+11	0	0	0
+21	0	0	0
+21	0	0	0
+22	0	0	0
+22	0	0	0
