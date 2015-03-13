@@ -1,6 +1,7 @@
 #include <omnetpp.h>
 #include "MACAddress.h"
 #include "EtherFrame_m.h"
+#include <json/json.h>
 class generator : public cSimpleModule
 {
 private:
@@ -9,6 +10,23 @@ long int numSent,numReceived;
 MACAddress address;
 MACAddress destaddress;
 cMessage*generateMsg;
+std::string out;
+protected:
+virtual void readJson(){
+std::ifstream ifile("test.json");
+Json::Reader reader;
+Json::Value root;
+if (ifile != NULL && reader.parse(ifile, root)) {
+    const Json::Value arrayDest = root["nodes"];
+    for (unsigned int i = 0; i < arrayDest.size(); i++) {
+        if (!arrayDest[i].isMember("source"))
+            continue;
+       // std::string out;
+        out = arrayDest[i]["source"].asString();
+        std::cout << out << "\n";
+    }
+}
+}
 protected:
 virtual void initialize()
 {
@@ -32,7 +50,8 @@ virtual void initialize()
 virtual void updateDisplay()
 {
     char buf[40];
-    sprintf(buf, "rcvd: %ld sent: %ld", numReceived, numSent);
+    sprintf(buf, "rcvd: %s sent: %ld", out, numSent);
+   // sprintf(buf, "source: %ld", out);
     getParentModule()->getDisplayString().setTagArg("t",0,buf);
     EV << "\"updatedisplay\" called\n";
     getParentModule()-> bubble("update display called");

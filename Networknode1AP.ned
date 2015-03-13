@@ -24,11 +24,27 @@ network Networknode1AP
        // int numCli;
       //  @display("b=297,203");
     submodules:
-        cliHost: node1 {
+        cliHost: node1{
+            parameters:
+                @display("r=,,#707070");
+        }
+        cliHost1: node1 {
+            parameters:
+                @display("r=,,#707070");
+        }
+        cliHost2: node1 {
+            parameters:
+                @display("r=,,#707070");
+        }
+        cliHost3: node1 {
             parameters:
                 @display("r=,,#707070");
         }
         ap: WirelessAPWithSink {
+            parameters:
+                @display("p=200,200;r=,,#707070");
+        }
+         ap1: WirelessAPWithSink {
             parameters:
                 @display("p=200,200;r=,,#707070");
         }

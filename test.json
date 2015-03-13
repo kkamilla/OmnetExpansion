@@ -1,0 +1,13 @@
+{
+    "nodes": [
+        {
+            "source": "node1",
+            "destination": "node2",
+            "time": "Sun Jan  19 03:07:41 2015"
+        },
+        {
+            "source": "node2",
+            "destination": "node1",
+            "time": "Sun Jan  19 09:07:41 2015"
+        }]
+ }
